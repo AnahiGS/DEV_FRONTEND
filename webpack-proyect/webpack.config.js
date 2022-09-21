@@ -25,8 +25,27 @@ module.exports = {
             {
                 test:/.(css|scss)$/,
                 use: [
-                    "style-loader"
-                    "css-loader"
+                    "style-loader",
+                    "css-loader",
+                    "sass-loader",
+                ]
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use:{
+                    loader: "babel-loader",
+                    options: {
+                        presets:[
+                            ['@babel/preset-env', {targets: "defaults"}]
+                        ]
+                    }
+                }
+            },
+            {
+                test: /\.(png|jpg|svg|gif|jpeg)$/,
+                use:[
+                    "file-loader"
                 ]
             }
         ]
