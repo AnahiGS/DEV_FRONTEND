@@ -1,0 +1,1 @@
+(()=>{var r={706:r=>{r.exports={greeting:function(r){return`Hola ${r} desde web pack con JS`}}}},e={};function o(t){var n=e[t];if(void 0!==n)return n.exports;var s=e[t]={exports:{}};return r[t](s,s.exports,o),s.exports}(()=>{const{greeting:r}=o(706);console.log(r("Carlos"))})()})();
