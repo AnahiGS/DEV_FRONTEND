@@ -13,7 +13,13 @@ class ComponenteClase extends React.Component {
             age: this.state.age+1||0,
         })
     }
-    
+    renderJsx =() =>{
+        return (
+            <div>
+                <h3>Hola desde un función</h3>
+            </div>
+        )
+    }
     render( ){
         return (
             <div className="app">
@@ -28,6 +34,9 @@ class ComponenteClase extends React.Component {
                         age: this.state.age-1||0,
                     })
                 }}>Disminuir</button>
+                {
+                this.renderJsx()
+                }
             </div>
         )
     }
