@@ -4,7 +4,7 @@ import React from 'react';
 class ComponenteClase extends React.Component {
     state = {
         name: "Anahi",
-        rol: "Frontend",
+        rol: "",
         age: 23,
     }
     handleClick =(event) =>{
@@ -19,6 +19,12 @@ class ComponenteClase extends React.Component {
                 <h3>Hola desde un función</h3>
             </div>
         )
+    }
+    handlerChange =(event) =>{
+        this.setState({
+            ...this.state,
+            rol: event.target.value
+        })
     }
     render( ){
         return (
@@ -37,6 +43,10 @@ class ComponenteClase extends React.Component {
                 {
                 this.renderJsx()
                 }
+                <div>
+                    <input type="text" placeholder="Escribe algo" onChange={this.handlerChange}/>
+                    <p>{this.state.rol}</p>
+                </div>
             </div>
         )
     }
