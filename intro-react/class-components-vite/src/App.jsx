@@ -1,6 +1,9 @@
 import { Component } from 'react';
 import './App.css';
-
+import ChildComponent from "./components/ChildComponent";
+import Button from "./components/Button";
+import TeenagerComponent from "./components/TeenagerComponent";
+import PersonComponent from "./components/PersonComponent";
 
 //1 entender las características de component
 class App extends Component {
@@ -98,7 +101,5 @@ class App extends Component {
   }
 }
 
-
-  
 
 export default App;
