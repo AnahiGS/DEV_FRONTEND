@@ -18,7 +18,7 @@ export default class PersonComponent extends Component {
   shouldComponentUpdate = (nextProps,nextState) => {
     console.log(nextProps)
     console.log("nextState",nextState)
-    console.log("Se ejectuar antes de empezar a actualizar el componente, cuando llegan las nuevas propuedas (nextProps) y el nuevo estado (nextState)")
+    console.log("Se ejectuar antes de empezar a actualizar el componente, cuando llegan las nuevas propiedades (nextProps) y el nuevo estado (nextState)")
   }
 
   componentWillUpdate = (nextProps,nextState) => {
