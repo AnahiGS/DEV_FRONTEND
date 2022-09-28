@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import LoginForm from './components/LoginForm'
+import Dashboard from './components/Dashboard';
 
 function App() {
   const [isUserLogged, setisUserLogged] = useState(false);

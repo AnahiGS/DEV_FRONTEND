@@ -1,42 +1,43 @@
-import React,{useState} from 'react'
-import './LoginForm.css'
+import React, { useState } from "react";
+import "./LoginForm.css";
 
-const LoginForm = ({userLogged}) => {
-  const [credentials, setCredentials] = useState({}); //user:"", password:"" (primera forma)
-  
+const LoginForm = ({ userLogged }) => {
+  const [credentials, setCredentials] = useState({}); // usuario: "", password: ""  1ER FORMA PARA WUITAR WARNING
+  const credentialsHarcoded = { user: "usuarioG17", password: "password" };
+  /**
+   * Harcodear 👀 credenciales con
+   *    user: usuarioG17
+   *    password: password
+   */
 
-  const credentialHarcoded = {user:'usuario', password: 'password'}
-  
-  
-  const handleFormValue= ({target:{name,value}}) => {setCredentials({...credentials, [key]:value})
-      //console.log(e.target.value);
-  }
+  const handleFormValue = ({ target: { name, value } }) =>
+    setCredentials({ ...credentials, [name]: value });
 
-  const submitForm= ()=>{
-    const { user, password} =credentialHarcoded;
-    if (credentials.user=== user && credential.password===password){
-      userLogged(true)
+  const submitForm = () => {
+    const { user, password } = credentialsHarcoded;
+    if (credentials.user === user && credentials.password === password) {
+      userLogged(true);
     }
-  }
+  };
 
   return (
-    <div>
-        LoginForm
-        <div className="form">
-            <input 
-            type="text" 
-            name="user" 
-            value={credentials.user || ""} //se toma el segundo valor si el primero es null o undefined, (segunda forma)
-            onChange={handleFormValue}/>
-            <input 
-            type="password" 
-            name= "password" 
-            value={credentials.password || ""} 
-            onChange={handleFormValue}/>
-            <button onClick={() => submitForm()}>Login</button>
-        </div>
+    <div className="form">
+      <input
+        type="text"
+        name="user"
+        value={credentials.user || ""}
+        onChange={handleFormValue}
+      />
+      <input
+        type="password"
+        name="password"
+        value={credentials.password || ""}
+        onChange={handleFormValue}
+      />
+
+      <button onClick={() => submitForm()}>Login</button>
     </div>
-  )
-}
+  );
+};
 
 export default LoginForm;
