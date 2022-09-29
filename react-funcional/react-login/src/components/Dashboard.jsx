@@ -23,7 +23,13 @@ const Dashboard = () => {
           <div key={index} style={{ border: "2px solid white" }}>
             <p>Name: {planet.name}</p>
             <p>Climate: {planet.climate}</p>
-            {/* <p> Lista de peliculas: <array> </p>  ???? */}
+            <div>Lista de peliculas: 
+                <p>
+                    {planet.films.map((planet,i) =>(
+                        <span>URL: {planet}</span>
+                    ))}
+                </p>
+            </div>
           </div>
         ))
       )}
