@@ -9,7 +9,8 @@ function App() {
   return (
     <div className="App">
       <Routes >
-        <Route path="/" element={<h2>React app 📝</h2>}/>
+        <Route index element={<Navigate replace to= "login"/>}/>
+        <Route path="/login" element={<h2>React app 📝</h2>}/>
         <Route path="/shopping-cart" element={<h2>Carrito de compras 📝</h2>}/>
         <Route path="*" element={<h1>Aquí va página bonita de 404</h1>}/>
       
